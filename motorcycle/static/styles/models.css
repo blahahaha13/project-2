@@ -20,6 +20,11 @@
 	background-color: red;
 }
 
+.bike-name {
+	font-size: 32px;
+}
+
+
 footer {
 	bottom: 0px;
 }
