@@ -21,7 +21,7 @@
   </header>
   {% block content %}
   {% endblock %}
-  <main>
+ <!--  <main>
   <div class='container-column'>
     <div class='container-row'>
 
@@ -46,9 +46,9 @@
         <div class='bike-name'>Bike name</div>
       </div>
 
-    <!-- </div> -->
+    </div>
 
-    <!-- <div class='container-row'> -->
+    <!-- <div class='container-row'>
 
       <div class='bike-item'>
         <div><img src='../static/images/F_800_R.jpg'></div>
@@ -72,7 +72,12 @@
 
 
     </div>
-  </div>
+  </div> -->
+  {% for motorcycle in motorcycles %}
+  <p>name: {{ motorcycle.name }}</p>
+  <p>price: {{ motorcycle.price }}</p>
+  <p>img: <img src="{{ motorcycle.img }}" alt=""></p>
+  {% endfor %}
   </main>
   <div>
   <footer>
