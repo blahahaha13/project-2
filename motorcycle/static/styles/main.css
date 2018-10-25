@@ -1,15 +1,41 @@
-*	{
-  /*background-color: red;*/
+.header {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  flex-direction: row;
+  list-style-type: none;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  margin-top: 0;
+  padding: 3.4em;
 }
 
+.header li{
+  text-decoration-color: red;
+  list-style-type: none;
+}
 
+.hero{
+  min-height: 80vh;
+  padding-top: 8.4em;
+}
 
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  flex-direction: row;
+  list-style-type: none;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  margin-bottom: 0;
+  padding: 2.4em;
+}
 
-
-
-
-
-
-
-
-
+/*#logo{
+  float: right;
+}*/

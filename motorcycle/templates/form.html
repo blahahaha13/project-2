@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <title>Beemer Boys</title>
+  <link rel="stylesheet" type="text/css" href="../static/styles/form.css">
+
+</head>
+<body>
+  <header>
+  <div>
+    <ul>
+      <li id="logo">LOGO</li>
+      <li>ABOUT</li>
+      <li>MDOELS</li>
+      <li>SIGN IN</li>
+    </ul>
+  </div>
+  </header>
+  {% block content %}
+<section>
+  <div class="container">
+    <div class="login-form">
+      <h1>Sign in</h1>
+      <form>
+        <input type="text" name="" placeholder="Username">
+        <input type="password" name="" placeholder="password">
+        <input type="submit" name="" value="login">
+      </form>
+      <a href="#"> Forget Password</a>
+    </div>
+  </div>
+</section>
+
+
+  {% endblock %}
+  <footer>
+  <div>
+    <ul>
+      <li>&copy; 2018 Garrett, Praveen, Tirapat, Craig</li>
+      <li><i class="fab fa-github"></i></li>
+      <li><i class="fab fa-facebook-square"></i></li>
+      <li><i class="fab fa-linkedin"></i></li>
+    </ul>
+  </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</body>
+</html>
