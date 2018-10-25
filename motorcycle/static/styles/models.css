@@ -1,0 +1,25 @@
+/* --------- MODELS PAGE ----------- */
+
+
+
+
+.container-column {
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-color: grey;
+	background-size: cover;
+
+}
+
+.container-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-color: red;
+}
+
+footer {
+	bottom: 0px;
+}
