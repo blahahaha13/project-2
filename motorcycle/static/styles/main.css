@@ -1,3 +1,13 @@
-*{
-  background-color: red;
+*	{
+  /*background-color: red;*/
+}
+
+
+
+
+/* --------- MODELS PAGE ----------- */
+
+.container {
+	display: flex;
+	
 }
