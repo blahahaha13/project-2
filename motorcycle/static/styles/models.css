@@ -1,24 +1,47 @@
 /* --------- MODELS PAGE ----------- */
+* {
+	border: 0;
+	margin: 0;
+}
 
+body {
+	background-color: #282928;
+	/*height: 100%;*/
+}
 
-
+main {
+	height: 100%;
+}
 
 .container-column {
-	height: 500px;
+	/*height: 100%;*/
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	background-color: grey;
-	background-size: cover;
-
+	/*background-size: cover;*/
+	/*width: 1000px;*/
+	
 }
 
 .container-row {
+	/*height: 100%;*/
+	/*width: 100%;*/
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: center;
+	align-items: center;
 	background-color: red;
+	flex-wrap: wrap;
 }
+
+.bike-item {
+	height: 180px;
+	width: 300px;
+	margin: 0 20px;
+}
+
+
 
 .bike-name {
 	font-size: 32px;
@@ -26,5 +49,7 @@
 
 
 footer {
-	bottom: 0px;
+	height: 200px;
+	background-color: white;
+	/*bottom: 0;*/
 }
