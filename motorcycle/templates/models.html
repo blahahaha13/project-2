@@ -4,28 +4,43 @@
 {% block content %}
 
   <div class='models-container'>
+    <h2 class='model'>Roadster</h2>
     <div class='models-row'>
-    
-      {% for motorcycle in motorcycles %}
+      
+      {% for motorcycle in roadsters %}
         
-        <!-- <div class='card'>
-          <img src="{{ motorcycle.img }}" alt="">
-          <p>name: {{ motorcycle.name }}</p>
-          <p>price: {{ motorcycle.price }}</p>
-        </div> -->
-
         <div class="gallery">
           <a href="#">
           <img src="{{ motorcycle.img }}" alt="Cinque Terre" width="300" height="180">
           </a>
           <div class="name-div"><h2 class="name">{{ motorcycle.name }}</h2></div>
-          <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quod cum amet pariatur animi beatae, error voluptate tempora molestiae rem ex asperiores labore excepturi quo rerum magni! Dolore, quae, itaque.</div>
+          
           <div class="price>-div"><h3 class="price">{{ motorcycle.price }}</h3></div>
           <div class="button-div"><button type="button">Buy</button></div>
         </div>
       
       {% endfor %}
     </div>
+
+    <h2 class='model'>Heritage</h2>
+    <div class='models-row'>
+      
+      {% for motorcycle in heritages %}
+
+        <div class="gallery">
+          <a href="#">
+          <img src="{{ motorcycle.img }}" alt="Cinque Terre" width="300" height="180">
+          </a>
+          <div class="name-div"><h2 class="name">{{ motorcycle.name }}</h2></div>
+          
+          <div class="price>-div"><h3 class="price">{{ motorcycle.price }}</h3></div>
+          <div class="button-div"><button type="button">Buy</button></div>
+        </div>
+      
+      {% endfor %}
+    </div>
+
+
   </div>
 
 {% endblock %}

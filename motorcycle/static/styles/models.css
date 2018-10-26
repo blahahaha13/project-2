@@ -4,18 +4,20 @@
 	margin: 0;
 }
 
-
+.model {
+	text-align: center;
+}
 
 .models-row {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	flex-direction: flex-start;
+	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
 .gallery {
 	width: 300px;
-	height: 420px;
+	/*height: 600px;*/
 	background-color: grey;
 	padding: 20px;
 	margin: 25px auto;
@@ -34,6 +36,8 @@
 	text-align: center;
 	margin: 20px auto;
 }
+
+
 
 button {
 	font-family: Arial;
