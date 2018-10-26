@@ -1,4 +1,3 @@
-{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +9,14 @@
 </head>
 <body>
   <header>
-  <nav>
-    <div>
-      <a href="{% url 'landing' %}">Home</a>
-      {% if user.is_authenticated %}
-        <a href="{% url 'models' %}">Models</a>
-        <a href="{% url 'logout' %}">Logout</a>
-      {% else %}
-        <a href="{% url 'login' %}">Login</a>
-        <a href="{% url 'register' %}">Register</a>
-      {% endif %}
-    </div>
-  </nav>
+  <div>
+    <ul>
+      <li id="logo">LOGO</li>
+      <li>ABOUT</li>
+      <li>MDOELS</li>
+      <li>SIGN IN</li>
+    </ul>
+  </div>
   </header>
   {% block content %}
 <section>
@@ -31,12 +26,16 @@
       {% if error %}
         <p style="background-color: salmon; padding: 10px; ">{{ error }}</p>
       {% endif %}
-      <form action="{% url 'login' %}" method="POST">
+      <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
-        
-        <input type="text" name="username" placeholder="Username" minlength="2">
-        <input type="password" name="password" placeholder="Password" minlength="4">
-        <input type="submit" name="" value="login">
+
+        <input type="text" id="first_name" name="first_name" placeholder="first name" minlength="2">
+        <input type="text" name="last_name" placeholder="last name" minlength="2">
+        <input type="email" name="email" placeholder="email" minlength="2">
+        <input type="text" name="username" placeholder="username" minlength="2">
+        <input type="password" name="password" placeholder="password" minlength="4">
+        <input type="password" name="password2" placeholder="confirm password" minlength="4">
+        <input type="submit" name="" value="register">
       </form>
       <a href="#"> Forget Password</a>
     </div>
