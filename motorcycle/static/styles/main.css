@@ -1,41 +1,55 @@
+body{
+  margin:0;
+}
+
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   background-color: black;
   flex-direction: row;
   list-style-type: none;
   color: white;
+  font-size: 18px;
   position: fixed;
   top: 0;
   width: 100vw;
   margin-top: 0;
-  padding: 3.4em;
+  padding: 2.4em;
 }
 
 .header li{
   text-decoration-color: red;
   list-style-type: none;
+  padding-right: 5.5em;
+}
+
+
+#logo{
+  padding-right: 45em;
 }
 
 .hero{
   min-height: 80vh;
-  padding-top: 8.4em;
+  padding-top: 6.4em;
 }
 
 .footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   background-color: black;
   flex-direction: row;
   list-style-type: none;
   color: white;
+  font-size: 18px;
   position: fixed;
   bottom: 0;
   width: 100vw;
   margin-bottom: 0;
-  padding: 2.4em;
+  padding: 1.2em;
+  /*opacity: 1;*/
 }
 
-/*#logo{
-  float: right;
-}*/
+#copyright{
+  : center;
+}
+
