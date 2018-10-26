@@ -34,7 +34,7 @@ box-shadow: 0 0 20px rgba(0,0,0,.2);
 { margin: 0,0,20px;
   color: purple;
   font-size: 30px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 .login-form input{
   display: block;
@@ -47,7 +47,6 @@ box-shadow: 0 0 20px rgba(0,0,0,.2);
   font-size: 14px;
   letter-spacing: 1px;
   color: black;
-  text-transform: uppercase;
   border: none;
   background: red;
   font-family:'Roboto Condensed', sans-serif;
@@ -70,7 +69,6 @@ box-shadow: 0 0 20px rgba(0,0,0,.2);
   background: #005aca;
 }
 
-.login-form
 
 
 
