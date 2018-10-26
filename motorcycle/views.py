@@ -14,11 +14,11 @@ def about(request):
 def models(request):
   return render(request, 'models.html', {'motorcycles': motorcycles})
 
-def modelInfo(request):
-  return render(request, 'modelinfo.html')
-
 def modelinfo(request):
   return render(request, 'modelinfo.html')
+
+def stripe_default_form(request):
+  return render(request, 'stripe_default_form.html')
 
 # def login(request):
 #   return render(request, 'form.html')
@@ -109,7 +109,10 @@ def test_stripe(request):
     email='jenny.rosen@example.com'
   )
 
-  print(test_order)
+  pay_order = stripe.Order.retrieve(test_order)
+  order.pay(
+    source="tok_visa"
+    )
 
   return render(request, 'stripe_default_form.html')
 
