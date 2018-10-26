@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <title>Models</title>
-  <link rel="stylesheet" type="text/css" href="../static/styles/models.css">
+  <link rel="stylesheet" type="text/css" href="/static/styles/models.css">
 
 </head>
 <body>
+  
   <header>
   <div>
     <ul>
@@ -19,79 +20,35 @@
     </ul>
   </div>
   </header>
-  {% block content %}
-  {% endblock %}
- <!--  <main>
-  <div class='container-column'>
-    <div class='container-row'>
-
-      <div class='bike-item'>
-        <div><img src='../static/images/F_800_R.jpg'></div>
-        <div class='bike-name'>Bike name</div>
-
+  <main>
+    <div class='models-container'>
+      <div class='models-row'>
+      {% block content %}
+        {% for motorcycle in motorcycles %}
+          
+          
+          <div class='card'>
+            <img src="{{ motorcycle.img }}" alt="">
+            <p>name: {{ motorcycle.name }}</p>
+            <p>price: {{ motorcycle.price }}</p>
+          </div>
+          
+        
+        {% endfor %}
+      {% endblock %}
       </div>
-
-      <div class='bike-item'>
-        <div><img src='../static/images/F_800_R.jpg'></div>
-        <div class='bike-name'>Bike name</div>
-      </div>
-
-      <div class='bike-item'>
-        <div><img src='../static/images/F_800_R.jpg'></div>
-        <div class='bike-name'>Bike name</div>
-      </div>
-
-      <div class='bike-item'>
-        <div><img src='../static/images/F_800_R.jpg'></div>
-        <div class='bike-name'>Bike name</div>
-      </div>
-
     </div>
-
-    <!-- <div class='container-row'>
-
-      <div class='bike-item'>
-        <div><img src='../static/images/F_800_R.jpg'></div>
-        <div class='bike-name'>Bike name</div>
-      </div>
-
-      <div class='bike-item'>
-        <div><img src='../static/images/F_800_R.jpg'></div>
-        <div class='bike-name'>Bike name</div>
-      </div>
-
-      <div class='bike-item'>
-        <div><img src='../static/images/F_800_R.jpg'></div>
-        <div class='bike-name'>Bike name</div>
-      </div>
-
-      <div class='bike-item'>
-        <div><img src='../static/images/F_800_R.jpg'></div>
-        <div class='bike-name'>Bike name</div>
-      </div>
-
-
-    </div>
-  </div> -->
-  {% for motorcycle in motorcycles %}
-  <p>name: {{ motorcycle.name }}</p>
-  <p>price: {{ motorcycle.price }}</p>
-  <p>img: <img src="{{ motorcycle.img }}" alt=""></p>
-  {% endfor %}
   </main>
-  <div>
   <footer>
-  <div>
     <ul>
       <li>&copy; 2018 Garrett, Praveen, Tirapat, Craig</li>
       <li><i class="fab fa-github"></i></li>
       <li><i class="fab fa-facebook-square"></i></li>
       <li><i class="fab fa-linkedin"></i></li>
     </ul>
-  </div>
   </footer>
-  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  
 </body>
 </html>
