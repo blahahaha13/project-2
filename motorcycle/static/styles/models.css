@@ -4,52 +4,46 @@
 	margin: 0;
 }
 
-body {
-	background-color: #282928;
-	/*height: 100%;*/
+.model {
+	text-align: center;
 }
 
-main {
-	height: 100%;
-}
-
-.container-column {
-	/*height: 100%;*/
+.models-row {
 	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	background-color: grey;
-	/*background-size: cover;*/
-	/*width: 1000px;*/
-	
-}
-
-.container-row {
-	/*height: 100%;*/
-	/*width: 100%;*/
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	background-color: red;
+	flex-direction: flex-start;
+	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
-.bike-item {
-	height: 180px;
+.gallery {
 	width: 300px;
-	margin: 0 20px;
+	/*height: 600px;*/
+	background-color: grey;
+	padding: 20px;
+	margin: 25px auto;
 }
 
-
-
-.bike-name {
-	font-size: 32px;
+.name {
+	text-align: center;
+	margin: 15px auto;
 }
 
-
-footer {
-	height: 200px;
+.desc {
 	background-color: white;
-	/*bottom: 0;*/
 }
+
+.price {
+	text-align: center;
+	margin: 20px auto;
+}
+
+
+
+button {
+	font-family: Arial;
+	font-size: 20px;
+	width: 100%;
+}
+
+
+
