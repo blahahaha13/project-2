@@ -86,7 +86,7 @@ motorcycles = [
 
 
 def test_stripe(request):
-  stripe.api_key = "sk_test_1M26RGS2g2gWRyuKds5rp5wp"
+  stripe.api_key = "pk_test_oWcgMJxoTjtnsREeFyHNiuOd"
   # print(stripe.api_key)
   test_order = stripe.Order.create(
     currency='usd',
@@ -114,8 +114,8 @@ def test_stripe(request):
   return render(request, 'stripe_default_form.html')
 
 
-def checkout(request):
-  return render(request, 'checkout.html')
+def payment(request):
+  return render(request, 'payment.html')
 
 
 
