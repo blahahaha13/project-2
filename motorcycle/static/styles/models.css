@@ -4,10 +4,7 @@
 	margin: 0;
 }
 
-.models-container {
-	background-color: black;
 
-}
 
 .models-row {
 	display: flex;
@@ -17,3 +14,4 @@
 .card {
 	width: 200px;
 }
+
