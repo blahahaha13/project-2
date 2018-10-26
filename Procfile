@@ -1,0 +1,1 @@
+web: gunicorn contacts_project.wsgi
