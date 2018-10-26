@@ -1,24 +1,9 @@
 
- 
-.team_member {
-  width:100%;
-  position:relative;
-  overflow:hidden;
-  height:250px;
-}
-
-.info {
-  height:100%;
-
-}
-
-.info img {
-  max-width:100%;
-  max-height: 100vh;
-  transition: all .4s ease-out .1s;
-   -moz-transition: all .4s ease-out .1s;
-   -webkit-transition: all .4s ease-out .1s;
-}
+.card {
+  width: 1500px;
+  height: 1500px;
+  border-radius: 30px; 
+ }
 .info_reveal {
   height:100%; 
   transition: all .3s ease-in 0s;

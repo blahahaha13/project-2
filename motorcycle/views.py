@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from .models import Reciept
+import stripe
 # Create your views here.
 
 def landing(request):
@@ -16,8 +17,11 @@ def models(request):
 def modelInfo(request):
   return render(request, 'modelinfo.html')
 
-def login(request):
-  return render(request, 'form.html')
+def modelinfo(request):
+  return render(request, 'modelinfo.html')
+
+# def login(request):
+#   return render(request, 'form.html')
 
 def login(request):
   if request.method == 'POST':
@@ -89,8 +93,37 @@ heritages = [
   Motorcycle('R ninT Urban G/S', 'lorem', '$12,995', '../static/images/R_nineT_Urban_G:s.jpg')
 ]
 
+def test_stripe(request):
+  stripe.api_key = "sk_test_1M26RGS2g2gWRyuKds5rp5wp"
+  # print(stripe.api_key)
+  test_order = stripe.Order.create(
+    currency='usd',
+    items=[
+      {
+        "type":'sku',
+        "parent":'sku_DrJitqPlmVgKYf'
+      }
+    ],
+    shipping={
+      "name":'Jenny Rosen',
+      "address":{
+        "line1":'1234 Main Street',
+        "city":'San Francisco',
+        "state":'CA',
+        "country":'US',
+        "postal_code":'94111'
+      },
+    },
+    email='jenny.rosen@example.com'
+  )
+
+  print(test_order)
+
+  return render(request, 'stripe_default_form.html')
 
 
+def checkout(request):
+  return render(request, 'checkout.html')
 
 
 

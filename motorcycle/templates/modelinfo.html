@@ -1,4 +1,5 @@
-{% load staticfiles %}
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +22,13 @@
   </header>
  {% block content %}
 
-
-<div>
+<section>
+<div class='card'>
 <ul class="responsive_grid">
   <li>
     <div class="team_member">
        <div class="info">
-         <img src="http://www.placecage.com/g/500/500" alt=""/>
+         <img src="https://www.team-bhp.com/forum/attachments/vintage-cars-classics-india/324072d1270615399-bmw-classic-motorcycles-navroze.jpg" alt=""/>
       </div>
       <div class="info_reveal">
         <h6>Models<br/>BMW ...</h6>
@@ -36,8 +37,9 @@
       </div>
     </div>
   </li>
-  
+</ul>
 </div>
+</section>
   {% endblock %}
   <footer>
   <div>
