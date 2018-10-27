@@ -1,1 +1,1 @@
-web: gunicorn contacts_project.wsgi
+web: gunicorn beemer_boys.wsgi
