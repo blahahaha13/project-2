@@ -145,7 +145,3 @@ django_heroku.settings(locals())
 
 
 
-
-
-=======
->>>>>>> f328ecb71c95facca7560c27f96b9e628b1c96ab
