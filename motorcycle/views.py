@@ -143,15 +143,18 @@ def test_stripe(request):
   #   "cvc": '123'
   #   },
   # ) 
-
-  stripe.Charge.create(
+def charge(request):
+  test_order = stripe.Charge.create(
     api_key = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp',
     amount=200,
     currency="usd",
     source="tok_amex", # obtained with Stripe.js
     description="Charge for jenny.rosen@example.com"
   )
-
+  pay_order = stripe.Order.retrieve(test_order)
+  order.pay(
+    source="tok_amex"
+  )
 # transaction = Transaction(profile=request.user.profile,
 #   token=token,
 #   order_id=order_to_purchase.id,
