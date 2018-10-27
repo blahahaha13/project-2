@@ -2,7 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from .models import Reciept
+
+
+import datetime
 import stripe
+stripe.api_key = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
 # Create your views here.
 
 def landing(request):
@@ -19,9 +23,8 @@ def modelinfo(request):
 
 def stripe_default_form(request):
   return render(request, 'stripe_default_form.html')
-
-# def login(request):
-#   return render(request, 'form.html')
+def payment(request):
+  return render(request, 'payment.html')
 
 def login(request):
   if request.method == 'POST':
@@ -116,20 +119,34 @@ def test_stripe(request):
       },
     },
     email='jenny.rosen@example.com'
-  )
+  ) 
 
   pay_order = stripe.Order.retrieve(test_order)
   order.pay(
     source="tok_visa"
     )
 
-  return render(request, 'stripe_default_form.html')
+stripe.Token.create(
+  card={
+    "number": '4242424242424242',
+    "exp_month": 12,
+    "exp_year": 2019,
+    "cvc": '123'
+  },
+)
 
+# stripe.Charge.create(
+#   amount=200,
+#   currency="usd",
+#   source="tok_amex", # obtained with Stripe.js
+#   description="Charge for jenny.rosen@example.com"
+# )
 
-def payment(request):
-  return render(request, 'payment.html')
-
-
-
+# transaction = Transaction(profile=request.user.profile,
+#   token=token,
+#   order_id=order_to_purchase.id,
+#   amount=order_to_purchase.get_cart_total(),
+#   sucess=True)
+# transaction.save
 
 

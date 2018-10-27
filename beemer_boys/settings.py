@@ -140,4 +140,3 @@ STATIC_URL = '/static/'
 
 
 
-
