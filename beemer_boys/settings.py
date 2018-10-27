@@ -8,8 +8,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-
 import django_heroku
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -142,4 +142,9 @@ django_heroku.settings(locals())
 
 
 STATIC_URL = '/static/'
+
+STATIC_URL = '/static/'
+
+STRIPE_SECRET_KEY = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp'
+PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
 
