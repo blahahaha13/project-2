@@ -10,5 +10,6 @@ urlpatterns = [
   path('logout/', views.logout, name='logout'),
   path('register', views.register, name='register'),
   path('test-stripe', views.test_stripe, name='test'),
-  path('payment', views.payment, name='payment')
+  path('payment', views.payment, name='payment'),
+  path('charge', views.charge, name='charge')
   ]
