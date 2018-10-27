@@ -126,14 +126,21 @@ def test_stripe(request):
     source="tok_visa"
     )
 
-stripe.Token.create(
-  card={
-    "number": '4242424242424242',
-    "exp_month": 12,
-    "exp_year": 2019,
-    "cvc": '123'
-  },
+  stripe.Charge.create(
+  amount=2000,
+  currency="usd",
+  source="tok_mastercard", # obtained with Stripe.js
+  description="Charge for jenny.rosen@example.com"
 )
+
+# stripe.Token.create(
+#   card={
+#     "number": '4242424242424242',
+#     "exp_month": 12,
+#     "exp_year": 2019,
+#     "cvc": '123'
+#   },
+# )
 
 # stripe.Charge.create(
 #   amount=200,
