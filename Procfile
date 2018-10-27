@@ -1,1 +1,1 @@
-web: gunicorn motorcycle.wsgi
+web: gunicorn beemer_boys.wsgi
