@@ -39,6 +39,9 @@ form.addEventListener('submit', function(event) {
   });
 });
 function stripeTokenHandler(token) {
+	sucessElement.className = '';
+	sucessElement.querySelector('.token').textContent = token.id;
+
   // Insert the token ID into the form so it gets submitted to the server
   var form = document.getElementById('payment-form');
   var hiddenInput = document.createElement('input');
@@ -51,4 +54,4 @@ function stripeTokenHandler(token) {
   form.submit();
 }
 
-<script src="https://js.stripe.com/v3/"></script>
+// <script src="https://js.stripe.com/v3/"></script>
