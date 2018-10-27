@@ -54,4 +54,3 @@ function stripeTokenHandler(token) {
   form.submit();
 }
 
-// <script src="https://js.stripe.com/v3/"></script>

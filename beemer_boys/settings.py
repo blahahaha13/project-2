@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django_heroku
 
 
 
@@ -124,6 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+<<<<<<< HEAD
 
 #Stripe Setting
 #test keys
@@ -132,3 +134,7 @@ STATIC_URL = '/static/'
 
 django_heroku.settings(locals())
 
+=======
+STRIPE_SECRET_KEY = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp'
+PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
+>>>>>>> 0485745cb60f27a4b5f6c0290ea7bcc1d3c8982d

@@ -7,6 +7,8 @@ from .models import Reciept
 import datetime
 import stripe
 stripe.api_key = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
+# PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
+
 # Create your views here.
 
 def landing(request):
@@ -99,7 +101,7 @@ heritages = [
 
 
 def test_stripe(request):
-  stripe.api_key = "pk_test_oWcgMJxoTjtnsREeFyHNiuOd"
+  stripe.api_key ='pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
   # print(stripe.api_key)
   test_order = stripe.Order.create(
     currency='usd',
@@ -125,30 +127,31 @@ def test_stripe(request):
   pay_order = stripe.Order.retrieve(test_order)
   order.pay(
     source="tok_visa"
-    )
+  )
+
+  # stripe.Charge.create(
+  #   amount=2000,
+  #   currency="usd",
+  #   source="tok_mastercard", # obtained with Stripe.js
+  #   description="Charge for jenny.rosen@example.com"
+  # )
+
+  # stripe.Token.create(
+  #   card={
+  #   "number": '4242424242424242',
+  #   "exp_month": 12,
+  #   "exp_year": 2019,
+  #   "cvc": '123'
+  #   },
+  # ) 
 
   stripe.Charge.create(
-  amount=2000,
-  currency="usd",
-  source="tok_mastercard", # obtained with Stripe.js
-  description="Charge for jenny.rosen@example.com"
-)
-
-# stripe.Token.create(
-#   card={
-#     "number": '4242424242424242',
-#     "exp_month": 12,
-#     "exp_year": 2019,
-#     "cvc": '123'
-#   },
-# )
-
-# stripe.Charge.create(
-#   amount=200,
-#   currency="usd",
-#   source="tok_amex", # obtained with Stripe.js
-#   description="Charge for jenny.rosen@example.com"
-# )
+    api_key = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp',
+    amount=200,
+    currency="usd",
+    source="tok_amex", # obtained with Stripe.js
+    description="Charge for jenny.rosen@example.com"
+  )
 
 # transaction = Transaction(profile=request.user.profile,
 #   token=token,
