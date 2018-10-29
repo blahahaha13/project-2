@@ -16,5 +16,5 @@ urlpatterns = [
   # path('', views.HomePageView.as_view(), name='home'),
   
   # path('charge/', views.charge, name='charge'),
-  path('', views.HomePageView.as_view(), name='home'),
+  # path('', views.HomePageView.as_view(), name='home'),
 ]
