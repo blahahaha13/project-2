@@ -12,41 +12,76 @@
   crossorigin="anonymous"></script>
 </head>
 <body>
-  <div>
-    <header>
+  <header>
+    <span class="bb-logo">BEEMER BOYS</span>
     <ul class='header'>
-      <li id="logo">BEEMER BOYS</li>
-      <li>-ABOUT</li>
+      <li>ABOUT</li>
       <li>MODELS</li>
       <li>SIGN IN</li>
     </ul>
-    </header>
-  </div>
   </header>
-    <section class="hero">
-      <div id="slideshow">
-        <img src="../static/images/HERO1.jpg" class="bgM"/>
-        <img src="../static/images/HERO2.jpg" class="bgM"/>
-        <img src="../static/images/HERO3.jpg" class="bgM"/>
-        <img src="../static/images/HERO4.jpg" class="bgM"/>
-        <img src="../static/images/HERO5.jpg" class="bgM"/>
-        <img src="../static/images/HERO6.jpg" class="bgM"/>
-        <img src="../static/images/HERO7.jpg" class="bgM"/>
-        <img src="../static/images/HERO8.jpg" class="bgM"/>
-      </div>
-      <div id="wrap">
-      ...your content here
-      </div>
-    </section>
-<div>
+
+  <section class="hero">
+    <div id="slideshow"></div>
+    <p>Words</p>
+  </section>
+
   <footer>
     <ul class='footer'>
       <li>&copy; 2018 Garrett, Praveen, Tirapat, Craig</li>
       <li><i class="fab fa-github"></i></li>
     </ul>
   </footer>
-</div>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+
+<script>
+  $(document).ready(function() {
+    var slidesArr = [
+      "../static/images/HERO1.jpg",
+      "../static/images/HERO2.jpg",
+      "../static/images/HERO4.jpg",
+      "../static/images/HERO5.jpg",
+      "../static/images/HERO6.jpg",
+      "../static/images/HERO7.jpg",
+      "../static/images/HERO8.jpg"
+    ];
+
+    console.log(slidesArr)
+
+    //Init slide 1
+    slideTo(slidesArr[0]);
+
+    var slideIndex = 0;
+    var slideTime = animate();
+
+    $('#slideshow').click(function() {
+      //Reset the interval to 0 and start it again
+      clearInterval(slideTime);
+      slideTime = animate();
+
+
+      var selectedIndex = $(this).index();
+      var slide = slidesArr[selectedIndex];
+      slideTo(slide);
+
+    });
+
+    function slideTo(slide) {
+      $('#slideshow').css("background-image", `url(${slide})`)
+    }
+
+    function animate() {
+      return setInterval(function() {
+                var slide = slidesArr[slideIndex];
+                slideTo(slide)
+                slideIndex++;
+                if (slideIndex == slidesArr.length) {
+                  slideIndex = 0; 
+                }
+            }, 5000);
+    }
+
+  });
+</script>
+
 </body>
 </html>
