@@ -105,6 +105,7 @@ def register(request):
 
 
 def test_stripe(request):
+  test_motorcycle = Motorcycle.objects.find(id=1)
   stripe.api_key ='pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
   # print(stripe.api_key)
   test_order = stripe.Order.create(
@@ -134,11 +135,12 @@ def test_stripe(request):
   )
 
   stripe.Charge.create(
-    amount=2000,
+    amount=test_motorcycle.price,
     currency="usd",
     source="tok_mastercard", # obtained with Stripe.js
     description="Charge for jenny.rosen@example.com"
   )
+
 def token_stripe(request):
   stripe.api_key ='pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
 
@@ -151,24 +153,24 @@ def token_stripe(request):
     },
   ) 
 
-  charge_token = stripe.Token.retrieve(token_create)
-  token.charge(
-    source="ch_1DPy9hJ9KznIkzZEEP68FBpA"
-  )
+  # charge_token = stripe.Token.retrieve(token_create)
+  # token.charge(
+  #   source="ch_1DPy9hJ9KznIkzZEEP68FBpA"
+  # )
   # stripe.terminal.ConnectionToken.create()
 
-# def charge(request):
-#   test_order = stripe.Charge.create(
-#     api_key = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp',
-#     amount=200,
-#     currency="usd",
-#     source="tok_amex", # obtained with Stripe.js
-#     description="Charge for jenny.rosen@example.com"
-#   )
-#   pay_order = stripe.Order.retrieve(test_order)
-#   order.pay(
-#     source="tok_amex"
-#   )
+def charge(request):
+  test_order = stripe.Charge.create(
+    api_key = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp',
+    amount=2000,
+    currency="usd",
+    source="tok_amex", # obtained with Stripe.js
+    description="Charge for jenny.rosen@example.com"
+  )
+  pay_order = stripe.Order.retrieve(test_order)
+  order.pay(
+    source="tok_amex"
+  )
 # transaction = Transaction(profile=request.user.profile,
 #   token=token,
 #   order_id=order_to_purchase.id,

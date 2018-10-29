@@ -12,5 +12,5 @@ urlpatterns = [
   path('test-stripe', views.test_stripe, name='test'),
   path('payment', views.payment, name='payment'),
   path('charge/', views.charge, name='charge'),
-  path('', views.HomePageView.as_view(), name='home'),
+  # path('', views.HomePageView.as_view(), name='home'),
 ]
