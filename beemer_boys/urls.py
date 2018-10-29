@@ -20,7 +20,11 @@ from motorcycle import views
 urlpatterns = [
   path('admin/', admin.site.urls),
   path('', include ('motorcycle.urls')),
+<<<<<<< HEAD
   # path('home/', views.HomePageView.as_view(), name='home'),
+=======
+  
+>>>>>>> 861c4377914655f5ea6f852f55390c3d9d58372b
 
     
 

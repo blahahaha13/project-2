@@ -111,6 +111,7 @@ stripe.Token.create(
     "exp_month": 12,
     "exp_year": 2019,
     "cvc": '123'
+<<<<<<< HEAD
   },
 )
 # def test_stripe(request):
@@ -165,6 +166,16 @@ stripe.Token.create(
 #     source="ch_1DPy9hJ9KznIkzZEEP68FBpA"
 #   )
 #   # stripe.terminal.ConnectionToken.create()
+=======
+    },
+  ) 
+
+  charge_token = stripe.Token.retrieve(token_create)
+  token.charge(
+    source="ch_1DPy9hJ9KznIkzZEEP68FBpA"
+  )
+  # stripe.terminal.ConnectionToken.create()
+>>>>>>> 861c4377914655f5ea6f852f55390c3d9d58372b
 
 # def charge(request):
 #   test_order = stripe.Charge.create(
@@ -178,12 +189,21 @@ stripe.Token.create(
 #   order.pay(
 #     source="tok_amex"
 #   )
+<<<<<<< HEAD
 # # transaction = Transaction(profile=request.user.profile,
 # #   token=token,
 # #   order_id=order_to_purchase.id,
 # #   amount=order_to_purchase.get_cart_total(),
 # #   sucess=True)
 # # transaction.save
+=======
+# transaction = Transaction(profile=request.user.profile,
+#   token=token,
+#   order_id=order_to_purchase.id,
+#   amount=order_to_purchase.get_cart_total(),
+#   sucess=True)
+# transaction.save
+>>>>>>> 861c4377914655f5ea6f852f55390c3d9d58372b
 # class HomePageView(TemplateView):
 #     template_name = 'home.html'
 
