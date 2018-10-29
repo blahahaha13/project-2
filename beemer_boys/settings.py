@@ -121,5 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+django_heroku.settings(locals())
+
 STRIPE_SECRET_KEY = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp'
 STRIPE_PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
