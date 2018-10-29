@@ -9,8 +9,8 @@ urlpatterns = [
   path('login/', views.login, name='login'),
   path('logout/', views.logout, name='logout'),
   path('register', views.register, name='register'),
-  path('test-stripe', views.test_stripe, name='test'),
+  # path('test-stripe', views.test_stripe, name='test'),
   path('payment', views.payment, name='payment'),
-  path('charge/', views.charge, name='charge'),
-  path('', views.HomePageView.as_view(), name='home'),
+  # path('charge/', views.charge, name='charge'),
+  # path('', views.HomePageView.as_view(), name='home'),
   ]
