@@ -146,5 +146,5 @@ STATIC_URL = '/static/'
 STATIC_URL = '/static/'
 
 STRIPE_SECRET_KEY = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp'
-PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
 
+STRIPE_PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
