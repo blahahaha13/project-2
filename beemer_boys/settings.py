@@ -136,5 +136,9 @@ django_heroku.settings(locals())
 
 =======
 STRIPE_SECRET_KEY = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp'
+<<<<<<< HEAD
 PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
 >>>>>>> 0485745cb60f27a4b5f6c0290ea7bcc1d3c8982d
+=======
+STRIPE_PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
+>>>>>>> 82329b72c5aec28a49f91ab49dcd4ed3b4806e98

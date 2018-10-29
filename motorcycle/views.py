@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from django.views.generic.base import TemplateView
 from django.contrib import auth
 from .models import Reciept
+from django.template import RequestContext
+from django.contrib.auth import authenticate, login
 
 
 import datetime
@@ -129,21 +132,30 @@ def test_stripe(request):
     source="tok_visa"
   )
 
-  # stripe.Charge.create(
-  #   amount=2000,
-  #   currency="usd",
-  #   source="tok_mastercard", # obtained with Stripe.js
-  #   description="Charge for jenny.rosen@example.com"
-  # )
+  stripe.Charge.create(
+    amount=2000,
+    currency="usd",
+    source="tok_mastercard", # obtained with Stripe.js
+    description="Charge for jenny.rosen@example.com"
+  )
+def token_stripe(request):
+  stripe.api_key ='pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
 
-  # stripe.Token.create(
-  #   card={
-  #   "number": '4242424242424242',
-  #   "exp_month": 12,
-  #   "exp_year": 2019,
-  #   "cvc": '123'
-  #   },
-  # ) 
+  token_create = stripe.Token.create(
+    card={
+    "number": '4242424242424242',
+    "exp_month": 12,
+    "exp_year": 2019,
+    "cvc": '123'
+    },
+  ) 
+
+  charge_token = stripe.Token.retrieve(token_create)
+  token.charge(
+    source="ch_1DPy9hJ9KznIkzZEEP68FBpA"
+  )
+  # stripe.terminal.ConnectionToken.create()
+
 def charge(request):
   test_order = stripe.Charge.create(
     api_key = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp',
@@ -162,5 +174,23 @@ def charge(request):
 #   amount=order_to_purchase.get_cart_total(),
 #   sucess=True)
 # transaction.save
+class HomePageView(TemplateView):
+    template_name = 'home.html'
 
+def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context['key'] = settings.STRIPE_PUBLISHABLE_KEY
+    return context
+
+
+def charge(request):
+    if request.method == 'POST':
+        charge = stripe.Charge.create(
+        amount=500,
+        currency='usd',
+        description='A Django charge',
+        source=request.POST['stripeToken']
+        )
+        return render(request, 'charge.html')
+        context_instance=RequestContext(request)
 
