@@ -7,7 +7,7 @@
     <h2 class='model'>Roadster</h2>
     <div class='models-row'>
       
-      {% for motorcycle in roadsters %}
+      {% for motorcycle in motorcycles %}
         
         <div class="gallery">
           <a href="#">
@@ -15,8 +15,12 @@
           </a>
           <div class="name-div"><h2 class="name">{{ motorcycle.name }}</h2></div>
           
-          <div class="price>-div"><h3 class="price">{{ motorcycle.price }}</h3></div>
-          <div class="button-div"><button type="button">Buy</button></div>
+          <div class="price>-div"><h3 class="price">${{ motorcycle.price }}</h3></div>
+          <!-- <div class="button-div">
+            <button type="button">Buy</button>
+          </div> -->
+
+          <a href="{% url 'model info' motorcycle_id=motorcycle.id %}">Go to page</a>
         </div>
       
       {% endfor %}
