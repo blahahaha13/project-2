@@ -10,15 +10,17 @@ body{
 header {
   background-color: black;
   color: white;
-  font-family: "Benza";
-  font-size: 18px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 22px;
   margin-top: 0;
   padding: 2.1em;
-
 }
 
 .bb-logo{
-  font-size: 35px;
+  font-family: "Benza";
+  font-weight: 850;
+  font-size: 40px;
+  margin-bottom: 5em;
 }
 
 header ul {
@@ -37,6 +39,15 @@ header ul li{
   flex: 1;
 }
 
+.nav-link {
+  background: none!important;
+  color: white;
+  border: none; 
+  padding: 0!important;
+  font: inherit;
+}
+
+
 .footer {
   display: flex;
   justify-content: center;
@@ -44,7 +55,7 @@ header ul li{
   flex-direction: row;
   list-style-type: none;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   /*width: 100vw;*/
   margin: 0;
   padding: 1.2em;
@@ -53,6 +64,10 @@ header ul li{
 .footer li{
   padding-left: 1.5em;
   padding-right: 1.5em;
+}
+
+footer{
+  font-family:'Roboto Slab', serif;;
 }
 
 .hero {
