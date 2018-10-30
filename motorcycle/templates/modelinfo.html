@@ -2,6 +2,23 @@
 
 {% block content %}
 
+
+  <h2> {{ motorcycle.name }} </h2>
+  <p> {{ motorcycle.description }} </p>
+  <h3> ${{ motorcycle.price}} </h3>
+  <img src="{{ motorcycle.img }}" alt="Model Image">
+  <a href="/payment">Buy this Bike!</a>
+  
+<form action="{% url 'charge' %}" method="post">
+  {% csrf_token %}
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_oWcgMJxoTjtnsREeFyHNiuOd"
+          data-description="Motorcycle Charge"
+          data-amount="{{ motorcycle.price}}"
+          data-locale="auto">
+            
+  </script>
+</form>
 <section>
 <div class='card'>
 <ul class="responsive_grid">
