@@ -6,19 +6,21 @@
   <p> {{ motorcycle.description }} </p>
   <h3> ${{ motorcycle.price}} </h3>
   <img src="{{ motorcycle.img }}" alt="Model Image">
-  <a href="/payment">Buy this Bike!</a>
+  <!-- <a href="/payment">Buy this Bike!</a> -->
+  <!-- <a href="{% url 'charge' %}">Buy this Bike!</a> -->
   
 <form action="{% url 'charge' %}" method="post">
   {% csrf_token %}
+  <input type="hidden" name="price" value="{{ motorcycle.price }}">
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="pk_test_oWcgMJxoTjtnsREeFyHNiuOd"
           data-description="Motorcycle Charge"
-          data-amount="{{ motorcycle.price}}"
+          data-amount="{{ motorcycle.price }}"
           data-locale="auto">
-            
   </script>
+  <!-- <button type="submit">Buy this Bike!</button> -->
 </form>
-<section>
+<!-- section>
 <div class='card'>
 <ul class="responsive_grid">
   <li>
@@ -35,7 +37,7 @@
   </li>
 </ul>
 </div>
-</section>
+</section> -->
 
 {% endblock %}
 
