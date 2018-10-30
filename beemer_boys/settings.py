@@ -133,19 +133,6 @@ django_heroku.settings(locals())
 
 
 
-
-
-
-
-
-
-
-
-
-STATIC_URL = '/static/'
-
-
-
 # Stripe Settings && App Keys
 STRIPE_SECRET_KEY = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp'
 STRIPE_PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
