@@ -7,9 +7,6 @@
   <p> {{ motorcycle.description }} </p>
   <h3> ${{ motorcycle.price}} </h3>
   <img src="{{ motorcycle.img }}" alt="Model Image">
-  <!-- <a href="/payment">Buy this Bike!</a> -->
-  <!-- <a href="{% url 'charge' %}">Buy this Bike!</a> -->
-  
 <form action="{% url 'charge' %}" method="post">
   {% csrf_token %}
   <input type="hidden" name="price" value="{{ motorcycle.price }}">
@@ -19,30 +16,6 @@
           data-amount="{{ motorcycle.price }}"
           data-locale="auto">
   </script>
-  <!-- <button type="submit">Buy this Bike!</button> -->
 </form>
-
-<section>
-<div class='card'>
-<ul class="responsive_grid">
-  <li>
-    <div class="team_member">
-       <div class="info">
-         <img src="https://www.team-bhp.com/forum/attachments/vintage-cars-classics-india/324072d1270615399-bmw-classic-motorcycles-navroze.jpg" alt=""/>
-      </div>
-      <div class="info_reveal">
-        <h6>Models<br/>BMW ...</h6>
-        <p><a href="mailto:address@addresss.com">BMW@bmw.com</a></p>
-        <p>Price: $ 40000</p>
-      </div>
-    </div>
-  </li>
-</ul>
-</div>
-
-</section>
 {% endblock %}
 
-
-
-  
