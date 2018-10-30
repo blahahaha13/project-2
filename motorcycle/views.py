@@ -14,6 +14,9 @@ stripe.api_key = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
 
 # Create your views here.
 
+def home(request):
+  return render(request, 'home.html')
+
 def landing(request):
   return render(request, 'landing.html')
 
@@ -33,6 +36,8 @@ def modelinfo(request, motorcycle_id):
 
 def stripe_default_form(request):
   return render(request, 'stripe_default_form.html')
+
+
 def payment(request):
   return render(request, 'payment.html')
 
@@ -111,31 +116,31 @@ def test_stripe(request):
   test_motorcycle = Motorcycle.objects.find(id=1)
   stripe.api_key ='pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
   # print(stripe.api_key)
-  test_order = stripe.Order.create(
-    currency='usd',
-    items=[
-      {
-        "type":'sku',
-        "parent":'sku_DrJitqPlmVgKYf'
-      }
-    ],
-    shipping={
-      "name":'Jenny Rosen',
-      "address":{
-        "line1":'1234 Main Street',
-        "city":'San Francisco',
-        "state":'CA',
-        "country":'US',
-        "postal_code":'94111'
-      },
-    },
-    email='jenny.rosen@example.com'
-  ) 
+  # test_order = stripe.Order.create(
+  #   currency='usd',
+  #   items=[
+  #     {
+  #       "type":'sku',
+  #       "parent":'sku_DrJitqPlmVgKYf'
+  #     }
+  #   ],
+  #   shipping={
+  #     "name":'Jenny Rosen',
+  #     "address":{
+  #       "line1":'1234 Main Street',
+  #       "city":'San Francisco',
+  #       "state":'CA',
+  #       "country":'US',
+  #       "postal_code":'94111'
+  #     },
+  #   },
+  #   email='jenny.rosen@example.com'
+  # ) 
 
-  pay_order = stripe.Order.retrieve(test_order)
-  order.pay(
-    source="tok_visa"
-  )
+  # pay_order = stripe.Order.retrieve(test_order)
+  # order.pay(
+  #   source="tok_visa"
+  # )
 
   stripe.Charge.create(
     amount=test_motorcycle.price,
@@ -190,16 +195,19 @@ def token_stripe(request):
 #     return context
 
 
-def charge(request, motorcycle_price):
+def charge(request):
+  # motorcycle = Motorcycle.objects.get(id=motorcycle_id)
+  price = request.POST['price']
+  print(price)
   if request.method == 'POST':
-      motorcycle = Motorcycle.objects.get(id=motorcycle_price)
-      charge = stripe.Charge.create(
-        api_key = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp',
-        amount='motorcycle',
-        currency='usd',
-        description='A Django charge',
-        source=request.POST['stripeToken']
-        )
+    charge = stripe.Charge.create(
+      api_key = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp',
+      amount=price,
+      currency='usd',
+      description='Motorcycle price charge',
+      source=request.POST['stripeToken']
+    )
   return render(request, 'charge.html')
         # context_instance=RequestContext(request)
+  
 
