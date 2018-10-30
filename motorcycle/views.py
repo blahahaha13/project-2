@@ -10,9 +10,7 @@ from django.contrib.auth import authenticate, login
 import datetime
 import stripe
 stripe.api_key = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
-# PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
 
-# Create your views here.
 
 def landing(request):
   return render(request, 'landing.html')
@@ -31,10 +29,6 @@ def modelinfo(request, motorcycle_id):
   motorcycle = Motorcycle.objects.get(id=motorcycle_id)
   return render(request, 'modelinfo.html', {'motorcycle': motorcycle})
 
-def stripe_default_form(request):
-  return render(request, 'stripe_default_form.html')
-def payment(request):
-  return render(request, 'payment.html')
 
 def login(request):
   if request.method == 'POST':
@@ -253,15 +247,19 @@ def token_stripe(request):
 
 
 def charge(request, motorcycle_price):
+
+
+def charge(request):
+  price = request.POST['price']
+  print(price)
   if request.method == 'POST':
-      motorcycle = Motorcycle.objects.get(id=motorcycle_price)
-      charge = stripe.Charge.create(
-        api_key = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp',
-        amount='motorcycle',
-        currency='usd',
-        description='A Django charge',
-        source=request.POST['stripeToken']
-        )
+    charge = stripe.Charge.create(
+      api_key = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp',
+      amount=price,
+      currency='usd',
+      description='Motorcycle price charge',
+      source=request.POST['stripeToken']
+    )
   return render(request, 'charge.html')
-        # context_instance=RequestContext(request)
+  
 

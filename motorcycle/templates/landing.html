@@ -1,42 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-  <title>Beemer Boys</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../static/styles/main.css">
-  <link rel="stylesheet" type="text/css" href="../static/script/main.js">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-</head>
-<body>
-  <header>
-    <span class="bb-logo">BEEMER BOYS</span>
-    <ul class='header'>
-      <!-- <li>ABOUT</li>
-      <li>MODELS</li>
-      <li>SIGN IN</li> -->
-      <li><a class="nav-link" href="{% url 'about' %}">ABOUT</a></li>
-      <li><a class="nav-link" href="{% url 'models' %}">MODELS</a></li>
-      <li><a class="nav-link" href="{% url 'login' %}">SIGN IN</a></li>
-    </ul>
-  </header>
+{% extends 'base.html' %}
 
+{% block content %}
   <section class="hero">
     <div id="slideshow"></div>
     <p>Words</p>
   </section>
-
-  <footer>
-    <ul class='footer'>
-      <li>&copy; 2018 Garrett, Praveen, Tirapat, Craig</li>
-      <li><i class="fab fa-github"></i></li>
-    </ul>
-  </footer>
-
 <script>
   $(document).ready(function() {
     var slidesArr = [
@@ -44,13 +12,6 @@
       "../static/images/HERO10.jpg",
       "../static/images/HERO18.jpg",
       "../static/images/HERO9.jpg",
-      // "../static/images/HERO19.jpg",
-      // "../static/images/HERO11.jpg",
-      // "../static/images/HERO16.jpg",
-      // "../static/images/HERO12.jpg",
-      // "../static/images/HERO13.jpg",
-      // "../static/images/HERO15.jpg"
-      // "../static/images/HERO8.jpg"
     ];
 
     console.log(slidesArr)
@@ -85,11 +46,8 @@
                 if (slideIndex == slidesArr.length) {
                   slideIndex = 0; 
                 }
-            }, 2000);
+            }, 5000);
     }
-
   });
 </script>
-
-</body>
-</html>
+{% endblock %}
