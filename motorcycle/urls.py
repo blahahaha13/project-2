@@ -11,19 +11,16 @@ urlpatterns = [
   path('register', views.register, name='register'),
   # path('test-stripe', views.test_stripe, name='test'),
   path('payment', views.payment, name='payment'),
-<<<<<<< HEAD
  
   # path('charge/', views.charge, name='charge'),
   # path('', views.HomePageView.as_view(), name='home'),
   
   # path('charge/', views.charge, name='charge'),
   # path('', views.HomePageView.as_view(), name='home'),
-=======
   path('charge/', views.charge, name='charge'),
   path('', views.base, name='base')
   # path('home/', views.home, name='home'),
     # path('', views.HomePageView.as_view(), name='home'),
   
 
->>>>>>> 9d5c435066bfe330c5bdb25c4cf6e67e1be5df93
 ]
