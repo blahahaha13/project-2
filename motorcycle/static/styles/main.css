@@ -45,6 +45,7 @@ header ul li{
   border: none; 
   padding: 0!important;
   font: inherit;
+  text-decoration: none;
 }
 
 
@@ -70,7 +71,7 @@ footer{
   font-family:'Roboto Slab', serif;;
 }
 
-.hero {
+section.hero {
   position: relative;
 }
 
