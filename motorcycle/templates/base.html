@@ -20,9 +20,16 @@
   <header>
     <span class="bb-logo">BEEMER BOYS</span>
     <ul class='header'>
-      <li><a class="nav-link" href="{% url 'about' %}">ABOUT</a></li>
-      <li><a class="nav-link" href="{% url 'models' %}">MODELS</a></li>
-      <li><a class="nav-link" href="{% url 'login' %}">SIGN IN</a></li>
+      {% if user.is_authenticated %}
+        <li><a class="nav-link" href="{% url 'about' %}">ABOUT</a></li>
+        <li><a class="nav-link" href="{% url 'models' %}">MODELS</a></li>
+        <li><a class="nav-link" href="{% url 'logout' %}">LOGOUT</a></li>
+      {% else %}
+        <li><a class="nav-link" href="{% url 'about' %}">ABOUT</a></li>
+        <li><a class="nav-link" href="{% url 'models' %}">MODELS</a></li>
+        <li><a class="nav-link" href="{% url 'login' %}">SIGN IN</a></li>
+        <li><a class="nav-link" href="{% url 'register' %}">REGISTER</a></li>
+      {% endif %}
     </ul>
   </header>
 {% block content %}

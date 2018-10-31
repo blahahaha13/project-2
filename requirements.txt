@@ -2,6 +2,7 @@ certifi==2018.10.15
 chardet==3.0.4
 dj-database-url==0.5.0
 Django==2.1.2
+django-extensions==2.1.3
 django-heroku==0.3.1
 gunicorn==19.9.0
 idna==2.7
@@ -10,6 +11,8 @@ psycopg2==2.7.5
 psycopg2-binary==2.7.5
 pytz==2018.6
 requests==2.20.0
+shell==1.0.1
+six==1.11.0
 stripe==2.10.1
 urllib3==1.24
 whitenoise==4.1
