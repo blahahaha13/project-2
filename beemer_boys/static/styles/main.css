@@ -17,10 +17,12 @@ header {
 }
 
 .bb-logo{
+  color: white;
   font-family: "Benza";
   font-weight: 850;
   font-size: 40px;
   margin-bottom: 5em;
+  text-decoration: none;
 }
 
 header ul {
@@ -57,7 +59,6 @@ header ul li{
   list-style-type: none;
   color: white;
   font-size: 20px;
-  /*width: 100vw;*/
   margin: 0;
   padding: 1.2em;
 }
@@ -75,15 +76,6 @@ section.hero {
   position: relative;
 }
 
-#slideshow {
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("../images/HERO10.jpg");
-  position: relative;
-  height: 600px;
-}
-
 .hero p {
   color: white;
   font-size: 30px;
@@ -91,7 +83,232 @@ section.hero {
   top: 50%;
   left: 0;
   right: 0;
-  margin-top: -18px;
   margin-bottom: 0;
   text-align: center;
+<<<<<<< HEAD
+=======
+}
+
+#slideshow {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/HERO1.jpg");
+  position: relative;
+  height: 600px;
+}
+
+.home.hero p {
+  margin-top: -18px;
+}
+
+
+/* =========== */
+/* FORM STYLES */
+/* =========== */
+.error {
+  color: red; 
+  padding: 10px;
+}
+
+.form-container {
+  width: 100%;
+  background-color: white;
+  background-size: cover;
+}
+
+.form-container.login-form-container {
+  padding: 100px 0;
+}
+
+.login-form-container {
+  position: relative;
+  background: url("../images/OPENROAD1.jpg");
+}
+
+.container{
+  width: 340px;
+  margin: 0 auto;
+}
+
+.login-form {
+  position: relative;
+  box-sizing: border-box;
+  padding: 70px 30px;
+  transition: .5s;
+}
+
+.login-form:hover {
+  background: rgba(255, 255,255,.1)
+  box-shadow: 0 0 20px rgba(0,0,0,.2);
+}
+
+.login-form h1 {
+  margin: 0,0,20px;
+  color: white;
+  font-size: 50px;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  margin-bottom: 30px;
+  /*text-transform: uppercase;*/
+}
+
+.login-form input{
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: black;
+  border: none;
+  background: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+.login-form input::placeholder {
+  color: black;
+}
+
+.login-form input[type="submit"] {
+  color: black;
+  background: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+  background: #005aca;
+}
+
+
+/* ================== */
+/* MODEL INDEX STYLES */
+/* ================== */
+.models-container {
+  padding: 40px 0;
+}
+
+.model {
+  text-align: center;
+  font-size: 65px;
+}
+
+.models-row {
+  display: flex;
+  flex-direction: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  margin: 25px auto;
+}
+
+.name {
+  text-align: center;
+  margin: 15px auto;
+}
+
+.desc {
+  background-color: white;
+}
+
+.price {
+  text-align: center;
+  margin: 20px auto;
+}
+
+
+/* =================== */
+/* MODEL DETAIL STYLES */
+/* =================== */
+
+.card {
+  padding: 100px 0;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.card form {
+  width: 100px;
+}
+
+.card img {
+  margin: 0 auto;
+  display: block;
+}
+
+button .card-link{
+  text-decoration: none;
+  background: blue;
+  padding: .5em;
+  border-radius: 10px;
+  color: white;
+}
+
+
+/* ============*/
+/* ABOUT STYLES*/
+/* ============*/
+
+.hero.about {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/OPENROAD1.jpg");
+  position: relative;
+  height: 600px;
+}
+
+.hero.about:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero.about p {
+  margin-top: -97.5px;
+  left: 20px;
+  right: 20px;
+}
+
+
+/* ===========*/
+/* FORM STYLES*/
+/* ===========*/
+
+.hero.with-overlay {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/OPENROAD1.jpg");
+  position: relative;
+  height: 600px;
+}
+
+.hero.with-overlay:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+>>>>>>> slideshow
 }
