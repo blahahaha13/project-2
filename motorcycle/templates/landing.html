@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <section class="home hero">
+  <section class="hero">
     <div id="slideshow"></div>
+    <p>Words</p>
   </section>
 <script>
   $(document).ready(function() {
@@ -45,7 +46,7 @@
                 if (slideIndex == slidesArr.length) {
                   slideIndex = 0; 
                 }
-            }, 3000);
+            }, 5000);
     }
   });
 </script>
