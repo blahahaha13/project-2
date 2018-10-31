@@ -152,7 +152,6 @@ def token_stripe(request):
   )
 
 
-
 def charge(request):
   price = request.POST['price']
   print(price)
