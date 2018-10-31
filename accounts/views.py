@@ -19,7 +19,7 @@ def login(request):
 
 def logout(request):
   auth.logout(request)
-  return redirect('home')
+  return redirect('landing')
 
 def register(request):
   if request.method == 'POST':
