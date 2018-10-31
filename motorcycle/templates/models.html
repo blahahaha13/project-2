@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 {% load humanize %}
-
 {% block content %}
 
   <div class='models-container'>
-    <h2 class='model'>Roadster</h2>
+    <h2 class='model'>Models</h2>
     <div class='models-row'>
       
       {% for motorcycle in motorcycles %}
@@ -20,7 +19,7 @@
             <h3 class="price">${{ motorcycle.price|intcomma }}</h3>
           </div>
           
-          <a href="{% url 'model info' motorcycle_id=motorcycle.id %}">Go to page</a>
+          <button><a class='card-link' href="{% url 'model info' motorcycle_id=motorcycle.id %}">Checkout</a></button>
         </div>
 
       {% endfor %}

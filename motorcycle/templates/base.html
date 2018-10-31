@@ -18,7 +18,7 @@
 </head>
 <body>
   <header>
-    <span class="bb-logo">BEEMER BOYS</span>
+    <span><a class="bb-logo" href="{% url 'landing' %}">BEEMER BOYS</a></span>
     <ul class='header'>
       {% if user.is_authenticated %}
         <li><a class="nav-link" href="{% url 'about' %}">ABOUT</a></li>
@@ -34,7 +34,7 @@
   </header>
 {% block content %}
 {% endblock %}
-  <footer>
+  <footer class='footer'>
     <ul class='footer'>
       <li>&copy; 2018 Garrett, Praveen, Tirapat, Craig</li>
       <li><i class="fab fa-github"></i></li>
