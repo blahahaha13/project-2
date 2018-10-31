@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'whitenoise.middleware.WhitNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'beemer_boys.urls'
@@ -118,12 +119,26 @@ USE_TZ = True
 
 
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'beemer_boys/static'),
+  )
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+# MEDIA FOLDER SETTINGS
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 
-django_heroku.settings(locals())
+
+
+
 
 
 
@@ -131,3 +146,5 @@ django_heroku.settings(locals())
 STRIPE_SECRET_KEY = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp'
 STRIPE_PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
 
+
+django_heroku.settings(locals())
