@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<section class="form-container">
+{% block content %} 
+<section class="hero with-overlay form-container ">
   <div class="container">
     <div class="login-form">
       <h1>Sign in</h1>
       {% if error %}
-        <p style="background-color: salmon; padding: 10px; ">{{ error }}</p>
+        <p class="error">{{ error }}</p>
       {% endif %}
       <form action="{% url 'login' %}" method="POST">
         {% csrf_token %}
