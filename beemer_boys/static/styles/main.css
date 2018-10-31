@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "Benza";
+  src: url("../fonts/Benza.otf") format("opentype");
+}
+
+body{
+  margin:0;
+}
+
+header {
+  background-color: black;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  font-size: 22px;
+  margin-top: 0;
+  padding: 2.1em;
+}
+
+.bb-logo{
+  font-family: "Benza";
+  font-weight: 850;
+  font-size: 40px;
+  margin-bottom: 5em;
+}
+
+header ul {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  float: right;
+  list-style-type: none;
+  margin: 0;
+  width: 50%;
+}
+
+header ul li{
+  text-decoration-color: red;
+  list-style-type: none;
+  flex: 1;
+}
+
+.nav-link {
+  background: none!important;
+  color: white;
+  border: none; 
+  padding: 0!important;
+  font: inherit;
+  text-decoration: none;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  flex-direction: row;
+  list-style-type: none;
+  color: white;
+  font-size: 20px;
+  /*width: 100vw;*/
+  margin: 0;
+  padding: 1.2em;
+}
+
+.footer li{
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+footer{
+  font-family:'Roboto Slab', serif;;
+}
+
+section.hero {
+  position: relative;
+}
+
+#slideshow {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/HERO10.jpg");
+  position: relative;
+  height: 600px;
+}
+
+.hero p {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -18px;
+  margin-bottom: 0;
+  text-align: center;
+}
