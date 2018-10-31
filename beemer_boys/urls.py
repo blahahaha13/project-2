@@ -20,7 +20,7 @@ from motorcycle import views
 urlpatterns = [
   path('admin/', admin.site.urls),
   path('', include ('motorcycle.urls')),
-  
+  path('accounts/', include('accounts.urls')),
 
     
 
