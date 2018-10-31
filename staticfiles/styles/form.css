@@ -1,0 +1,73 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+/* May cause issues with other sections that don't have this class */
+section.form-container {
+  width: 100%;
+  background-color: skyblue;
+  background-size: cover;
+}
+
+.container{
+  width: 340px;
+  margin: 0 auto;
+}
+
+.login-form {
+  position: relative;
+  box-sizing: border-box;
+  padding: 70px 30px;
+  transition: .5s;
+}
+
+.login-form:hover {
+  background: rgba(255, 255,255, .1)
+  box-shadow: 0 0 20px rgba(0,0,0,.2);
+}
+
+.login-form h1 {
+  margin: 0,0,20px;
+  color: purple;
+  font-size: 50px;
+  /*text-transform: uppercase;*/
+}
+
+.login-form input{
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: black;
+  border: none;
+  background: red;
+  font-family:'Roboto Condensed', sans-serif;
+}
+
+.login-form input::placeholder {
+  color: #fff;
+}
+
+.login-form input[type="submit"] {
+  color: #fff;
+  background: #0072ff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+  background: #005aca;
+}
+
+
+
+
+

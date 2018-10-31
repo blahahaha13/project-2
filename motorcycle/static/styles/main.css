@@ -41,10 +41,12 @@ header {
 }
 
 header .bb-logo {
+  color: white;
   font-family: "Benza";
   font-weight: 850;
   font-size: 40px;
   margin-bottom: 5em;
+  text-decoration: none;
 }
 
 header ul {
@@ -81,7 +83,6 @@ header ul li{
   list-style-type: none;
   color: white;
   font-size: 20px;
-  /*width: 100vw;*/
   margin: 0;
   padding: 1.2em;
 }
@@ -103,6 +104,17 @@ section.hero {
   position: relative;
 }
 
+.hero p {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
 #slideshow {
   background-position: center center;
   background-size: cover;
@@ -112,18 +124,9 @@ section.hero {
   height: 600px;
 }
 
-.hero p {
-  color: white;
-  font-size: 30px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
+.home.hero p {
   margin-top: -18px;
-  margin-bottom: 0;
-  text-align: center;
 }
-
 
 
 /* =========== */
@@ -144,6 +147,11 @@ section.hero {
   padding: 100px 0;
 }
 
+.login-form-container {
+  position: relative;
+  background: url("../images/OPENROAD1.jpg");
+}
+
 .container{
   width: 340px;
   margin: 0 auto;
@@ -157,17 +165,17 @@ section.hero {
 }
 
 .login-form:hover {
-  background: rgba(255, 255,255, .1)
+  background: rgba(255, 255,255,.1)
   box-shadow: 0 0 20px rgba(0,0,0,.2);
 }
 
 .login-form h1 {
   margin: 0,0,20px;
-  color: black;
+  color: white;
   font-size: 50px;
   font-family: 'Roboto Slab', serif;
   text-align: center;
-  margin-
+  margin-bottom: 30px;
   /*text-transform: uppercase;*/
 }
 
@@ -183,17 +191,17 @@ section.hero {
   letter-spacing: 1px;
   color: black;
   border: none;
-  background: red;
+  background: white;
   font-family: 'Roboto Slab', serif;
 }
 
 .login-form input::placeholder {
-  color: #fff;
+  color: black;
 }
 
 .login-form input[type="submit"] {
-  color: #fff;
-  background: #0072ff;
+  color: black;
+  background: white;
   font-size: 16px;
   border: none;
   cursor: pointer;
@@ -202,7 +210,6 @@ section.hero {
 .login-form input[type="submit"]:hover {
   background: #005aca;
 }
-
 
 
 /* ================== */
@@ -214,6 +221,7 @@ section.hero {
 
 .model {
   text-align: center;
+  font-size: 65px;
 }
 
 .models-row {
@@ -227,7 +235,7 @@ section.hero {
 
 .gallery-item {
   width: 300px;
-  background-color: grey;
+  background-color: white;
   padding: 20px;
   margin: 25px auto;
 }
@@ -246,12 +254,86 @@ section.hero {
   margin: 20px auto;
 }
 
+
 /* =================== */
 /* MODEL DETAIL STYLES */
 /* =================== */
 
 .card {
-  width: 1500px;
-  height: 1500px;
-  border-radius: 30px; 
+  padding: 100px 0;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.card form {
+  width: 100px;
+}
+
+.card img {
+  margin: 0 auto;
+  display: block;
+}
+
+button .card-link{
+  text-decoration: none;
+  background: blue;
+  padding: .5em;
+  border-radius: 10px;
+  color: white;
+}
+
+
+/* ============*/
+/* ABOUT STYLES*/
+/* ============*/
+
+.hero.about {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/OPENROAD1.jpg");
+  position: relative;
+  height: 600px;
+}
+
+.hero.about:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero.about p {
+  margin-top: -97.5px;
+  left: 20px;
+  right: 20px;
+}
+
+
+/* ===========*/
+/* FORM STYLES*/
+/* ===========*/
+
+.hero.with-overlay {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/OPENROAD1.jpg");
+  position: relative;
+  height: 600px;
+}
+
+.hero.with-overlay:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
 }

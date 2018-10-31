@@ -11,6 +11,7 @@ import os
 import django_heroku
 
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'motorcycle',
     'stripe',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'whitenoise.middleware.WhitNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'beemer_boys.urls'
@@ -116,39 +119,34 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-
-#Stripe Setting
-#test keys
-# STRIPE_PUBLISHABLE_KEY = pk_test_oWcgMJxoTjtnsREeFyHNiuOd
-# Secret
-
-django_heroku.settings(locals())
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'beemer_boys/static'),
+  )
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
+# MEDIA FOLDER SETTINGS
 
-
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 
 
 
-
-
-
-STATIC_URL = '/static/'
 
 
 
 
 # Stripe Settings && App Keys
 STRIPE_SECRET_KEY = 'sk_test_1M26RGS2g2gWRyuKds5rp5wp'
-
 STRIPE_PUBLISHABLE_KEY = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
 
+
+django_heroku.settings(locals())

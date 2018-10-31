@@ -6,7 +6,7 @@
   <h2> {{ motorcycle.name }} </h2>
   <p> {{ motorcycle.description }} </p>
   <h3> ${{ motorcycle.price}} </h3>
-  <img src="{{ motorcycle.img }}" alt="Model Image">
+  <img src="{{ motorcycle.img.url }}" alt="Model Image">
 <form action="{% url 'charge' %}" method="post">
   {% csrf_token %}
   <input type="hidden" name="price" value="{{ motorcycle.price }}">
@@ -17,5 +17,6 @@
           data-locale="auto">
   </script>
 </form>
+
 {% endblock %}
 
