@@ -6,9 +6,9 @@ from .models import Reciept, Motorcycle
 from django.template import RequestContext
 from django.contrib.auth import authenticate, login
 
-
 import datetime
 import stripe
+
 stripe.api_key = 'pk_test_oWcgMJxoTjtnsREeFyHNiuOd'
 
 
